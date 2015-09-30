@@ -15,7 +15,7 @@
 <body>
 <div class="wrapper">
     <header>
-        <h1>Ribs</h1>
+        <h1>RIBS</h1>
 
         <p>Rsync Incremental Backup System</p>
 
@@ -25,7 +25,7 @@
 
 
         <ul>
-            <li><a href="https://jrust.github.io/ribs/phar/ribs.phar">Download latest Phar</a></li>
+            <li><a href="https://jrust.github.io/ribs/phar/ribs.phar">Download latest <strong>Phar</strong></a></li>
             <li><a href="https://github.com/jrust/ribs">View On <strong>GitHub</strong></a></li>
         </ul>
     </header>
@@ -89,12 +89,10 @@
             in crontab for your different hosts.</p>
 
         <p>An example crontab entry might look something like the following:
-            <pre>
-            0 0-23/3 * * * /usr/local/bin/ribs my_host hourly # run my_host every three hours
-            59 1 * * * /usr/local/bin/ribs my_host,big_host daily # run these two hosts daily
-            58 1 * * 0 /usr/local/bin/ribs small_host weekly # run small_host once a week
-            57 1 1 * * /usr/local/bin/ribs ALL monthly # use the keyword ALL to run all hosts monthly
-            </pre>
+            <pre>0 0-23/3 * * * /usr/local/bin/ribs my_host hourly # run my_host every three hours
+59 1 * * * /usr/local/bin/ribs my_host,big_host daily # run these two hosts daily
+58 1 * * 0 /usr/local/bin/ribs small_host weekly # run small_host once a week
+57 1 1 * * /usr/local/bin/ribs ALL monthly # use the keyword ALL to run all hosts monthly</pre>
         </p>
 
         <p>Notice that we schedule the daily, weekly, and monthly to occur at a
@@ -128,12 +126,12 @@
                 pattern will match slashes, otherwise they will stop at slashes.</p></li>
             <li><p>If the pattern begins with a + then the file will be included. However, the
                 include rule must come before the exclude rule in order to override it.</p></li>
-            <li><p>Examples:
-                'directories' =&gt; '/etc/rc.d'
-                'excludes' =&gt; '/init.d' // exclude the top level init.d directory in rd.d/
-                'excludes' =&gt; '<em>.sh' // exclude all shell files
-                    'excludes' =&gt; '+foo.sh *.sh rc</em>.d/' // exclude all shell files, except foo.sh, and all rcX.d
-                directories</p></li>
+            <li>Examples:
+<pre>
+'directories' => '/etc/rc.d'
+'excludes' => '/init.d' // exclude the top level init.d directory in rd.d/
+'excludes' => '.sh' // exclude all shell files
+'excludes' =? '+foo.sh *.sh rc.d/' // exclude all shell files, except foo.sh, and all rcX.d directories</pre></li>
         </ul>
 
         <h2>Backup Types</h2>
